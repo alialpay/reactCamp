@@ -1,6 +1,6 @@
 import React from 'react'
 import { useField,} from 'formik'
-import { FormField } from 'semantic-ui-react'
+import { FormField, Label } from 'semantic-ui-react'
 
 export default function KodlamaIoTextInput({...props}){
     //console.log(props)
@@ -10,9 +10,9 @@ export default function KodlamaIoTextInput({...props}){
     return(
         <FormField error={meta.touched && !!meta.error}>
             <input {...field} {...props} />
-            {meta.touched && !!meta.error} ? (
+            {meta.touched && !!meta.error ? (
                 <Label pointing basic coler="red" content={meta.error}></Label>
-            )
+            ):null}
         </FormField>
     )
 }
